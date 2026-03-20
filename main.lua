@@ -2,7 +2,7 @@
 function love.load()
 
 	rect = {
-		size = {xy = 100, r = 10},
+		size = {xy = 100, r = 10}}--[[,
 		positionx = {100, 
 		250, 
 		400},
@@ -11,7 +11,7 @@ function love.load()
 	cells = {
 		{"X", "_", "O"},
 		{"X", "O", "_"},
-		{"X", "O", "_"}}
+		{"X", "O", "_"}}]]
 end
 
 function love.update(dt)
@@ -43,7 +43,12 @@ function love.draw()
 	end]]
 	for positionY = 1, 3 do
 		for positionX = 1, 3 do
-			love.graphics.rectangle("line", rect.positionx[positionX], rect.positiony[positionY], rect.size.xy, rect.size.xy, rect.size.r)
+			--if positionX >= 2 then
+				X = positionX * 100 + 50 * (positionX - 1)
+			--elseif positionY >= 2 then
+				Y = positionY * 100 + 50 * (positionY - 1)
+			--end
+			love.graphics.rectangle("line", X, Y, rect.size.xy, rect.size.xy, rect.size.r)
 		end
 	end
 end

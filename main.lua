@@ -1,10 +1,7 @@
 
 function love.load()
 
-	rect = {
-		size = {100, 10},
-		positionx = {100, 250, 400},
-		positiony = 100}
+	rect = {{100, 10}, {100, 250, 400},100}
 
 end
 
@@ -12,8 +9,8 @@ function love.update(dt)
 end
 
 function love.draw()
-	love.graphics.rectangle("line", rect.positionx[1], rect.positiony, rect.size[1], rect.size[1], rect.size[2])
-	love.graphics.rectangle("line", rect.positionx[2], rect.positiony, rect.size[1], rect.size[1], rect.size[2])
-	love.graphics.rectangle("line", rect.positionx[3], rect.positiony, rect.size[1], rect.size[1], rect.size[2])
+	love.graphics.rectangle("line", rect[2][1], rect[3], rect[1][1], rect[1][1], rect[1][2])
+	love.graphics.rectangle("line", rect[2][2], rect[3], rect[1][1], rect[1][1], rect[1][2])
+	love.graphics.rectangle("line", rect[2][3], rect[3], rect[1][1], rect[1][1], rect[1][2])
 	love.graphics.setBackgroundColor(226/255, 170/255, 255/255, 1)
 end

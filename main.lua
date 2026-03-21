@@ -17,7 +17,11 @@ function love.load()
 end
 
 function love.mousepressed(x, y, button)
-	love.graphics.setBackgroundColor(0,0,0,0)
+	if cells[1][1] == "X" then
+		cells[1][1] = "O"
+	else
+		cells[1][1] = "X"
+	end
 end
 
 function love.update(dt)

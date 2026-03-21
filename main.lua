@@ -1,10 +1,15 @@
 
 function love.load()
-
+	
+	display = { 
+		width = love.graphics.getWidth(),
+		height = love.graphics.getHeight()}
+	
 	rect = {
-		size = {xy = 100, r = 10},
-		padding = 0,
+		size = {xy = 0, r = 10},
+		padding = 50,
 		margin = {x = 0, y = 0}}
+		rect.size.xy = (display.height - rect.padding * 2) / 3
 		
 	cells = {
 		{"X", "_", "O"},

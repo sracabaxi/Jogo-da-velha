@@ -10,6 +10,7 @@ function love.load()
 		padding = 50,
 		margin = {x = 0, y = 0}}
 		rect.size.xy = (display.height - rect.padding * 2) / 3
+		rect.margin.x = display.width / 2 - display.height / 2
 		
 	cells = {
 		{"X", "_", "O"},

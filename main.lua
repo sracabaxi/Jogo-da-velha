@@ -3,8 +3,8 @@ function love.load()
 
 	rect = {
 		size = {xy = 100, r = 10},
-		padding = 50,
-		margin = 100}--[[,
+		padding = --[[5]]0,
+		margin = --[[10]]0}--[[,
 		positionx = {100, 
 		250, 
 		400},
@@ -16,7 +16,12 @@ function love.load()
 		{"X", "O", "_"}}
 end
 
+function love.mousepressed(x, y, button)
+	love.graphics.setBackgroundColor(0,0,0,0)
+end
+
 function love.update(dt)
+	
 end
 
 function love.draw()

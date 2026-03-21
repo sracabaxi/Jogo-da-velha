@@ -13,9 +13,9 @@ function love.load()
 end
 
 function love.mousepressed(x, y, button)
-	local Xposition = math.floor(x / (rect.size.xy + rect.padding) + 1)
-	local Yposition = math.floor(y / (rect.size.xy + rect.padding) + 1)
-	if Xposition > 3 or Yposition > 3 then
+	local Xposition = math.floor((x - rect.margin.x) / (rect.size.xy + rect.padding) + 1)
+	local Yposition = math.floor((y - rect.margin.y) / (rect.size.xy + rect.padding) + 1)
+	if Xposition > 3 or Yposition > 3 or Yposition < 1 then
 		return
 	end
 	cells[Yposition][Xposition] = 0

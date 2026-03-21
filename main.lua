@@ -2,16 +2,18 @@
 function love.load()
 
 	rect = {
-		size = {xy = 100, r = 10}}--[[,
+		size = {xy = 100, r = 10},
+		padding = 50,
+		margin = 100}--[[,
 		positionx = {100, 
 		250, 
 		400},
-		positiony = {100, 250, 400}}
+		positiony = {100, 250, 400}}]]
 
 	cells = {
 		{"X", "_", "O"},
 		{"X", "O", "_"},
-		{"X", "O", "_"}}]]
+		{"X", "O", "_"}}
 end
 
 function love.update(dt)
@@ -44,11 +46,19 @@ function love.draw()
 	for positionY = 1, 3 do
 		for positionX = 1, 3 do
 			--if positionX >= 2 then
-				X = positionX * 100 + 50 * (positionX - 1)
+				X = (positionX - 1) * (rect.size.xy + rect.padding) + rect.margin
 			--elseif positionY >= 2 then
-				Y = positionY * 100 + 50 * (positionY - 1)
+				Y = (positionY - 1) * (rect.size.xy + rect.padding) + rect.margin
 			--end
 			love.graphics.rectangle("line", X, Y, rect.size.xy, rect.size.xy, rect.size.r)
+		end
+	end
+	for y = 1, 3 do
+		for x = 1, 3 do
+			X = (x - 1) * (rect.size.xy + rect.padding) + rect.margin
+			--elseif positionY >= 2 then
+			Y = (y - 1) * (rect.size.xy + rect.padding) + rect.margin
+			love.graphics.print(cells[y][x], X + 50, Y + 50)
 		end
 	end
 end
